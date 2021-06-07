@@ -53,12 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -69,15 +63,24 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
         children: [
           DrawerHeader(
-            child: Text("Checklist Options"),
+            decoration: BoxDecoration(
+              color: Colors.green[900],
+            ),
+            child: Text("Checklist Warden",
+                style: TextStyle(color: Colors.white, fontSize: 24)),
           ),
+          ListTile(title: Text("Continue Checklist")),
           ListTile(
-            title: Text("Manage Checklists"),
+            title: Text("Start a Checklist"),
             enabled: true,
           ),
           ListTile(
-            title: Text("Start a Checklist"),
+            title: Text("Manage Checklists"),
           ),
+          ListTile(
+            title: Text("History"),
+          ),
+          ListTile(title: Text("Settings")),
           AboutListTile(
               icon: const Icon(Icons.info),
               applicationName: 'Checklist Warden',
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
